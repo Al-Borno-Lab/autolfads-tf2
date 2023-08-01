@@ -1,0 +1,3 @@
+[submodule "util_scripts"]
+	path = util_scripts
+	url = https://github.com/snel-repo/gcp-tutorial-pack.git
