@@ -2,9 +2,9 @@ import logging
 import time
 import traceback
 
-from ray.tune.error import AbortTrialExecution
-from ray.tune.ray_trial_executor import RayTrialExecutor
-from ray.tune.trial import Trial
+from ray.tune.error import _AbortTrialExecution
+from ray.tune.execution.ray_trial_executor import RayTrialExecutor
+from ray.tune.experiment.trial import Trial
 
 logger = logging.getLogger("ray.tune.ray_trial_executor")
 
@@ -30,7 +30,7 @@ class SoftPauseExecutor(RayTrialExecutor):
         # --------------
         try:
             self._start_trial(trial, checkpoint)
-        except AbortTrialExecution:
+        except _AbortTrialExecution:
             logger.exception("Trial %s: Error starting runner, aborting!", trial)
             time.sleep(2)
             error_msg = traceback.format_exc()

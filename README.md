@@ -6,7 +6,7 @@ Clone the `autolfads-tf2` repo and create and activate a `conda` environment wit
 ```
 git clone git@github.com:snel-repo/autolfads-tf2.git
 cd autolfads-tf2
-conda create --name autolfads-tf2 python=3.7
+conda create --name autolfads-tf2 python=3.11.4
 conda activate autolfads-tf2
 conda install -c conda-forge cudatoolkit=10.0
 conda install -c conda-forge cudnn=7.6

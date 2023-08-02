@@ -5,8 +5,9 @@ from collections import defaultdict, deque, namedtuple
 
 import numpy as np
 from ray.tune.schedulers import FIFOScheduler, TrialScheduler
-from ray.tune.suggest.variant_generator import format_vars
-from ray.tune.trial import Checkpoint, Trial
+from ray.tune.search.variant_generator import format_vars
+from ray.tune.experiment.trial import Trial
+from ray.air.checkpoint import Checkpoint
 from tune_tf2.defaults import EXPLOIT_CSV, HPS_CSV, PBT_CSV
 from tune_tf2.pbt import exploiters, explorers
 from tune_tf2.pbt.hps import HyperParam
